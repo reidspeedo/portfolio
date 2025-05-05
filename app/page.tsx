@@ -88,11 +88,9 @@ export default function Home() {
               ))}
             </TextLoop>
           </h1>
-          <div className="text-sm text-neutral-500 dark:text-neutral-400">
-            Current theme: {theme}
-          </div>
+          
         </div>
-        <ThemeToggle />
+        {/* <ThemeToggle /> */}
       </header>
       <PhysicsContainer
         key={selectedDock}
