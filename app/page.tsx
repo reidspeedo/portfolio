@@ -1,103 +1,123 @@
-import Image from "next/image";
+'use client';
+
+import { AppleStyleDock } from '@/components/core/AppleStyleDock';
+import { TextLoop } from '@/components/motion-primitives/text-loop';
+import { PhysicsContainer } from '@/components/physics/PhysicsContainer';
+import { MemojiSprite } from '@/components/memoji/MemojiSprite';
+import { ThemeToggle } from '@/components/theme/theme-toggle';
+import { useTheme } from '@/components/theme/theme-provider';
+import { useState } from 'react';
+import { allCircles } from '@/lib/circles';
+
+const cyclingWords = [
+  { text: "built this portfolio" },
+  { text: "is a full stack dev" },
+  { text: "has built saas tools" },
+  { text: "specializes in data integration" },
+  { text: "likes to automate things" },
+];
+
+const memojiConfig = {
+  size: 240,
+  content: (
+    <MemojiSprite
+      spriteSheet="/memoji-spritesheet.png"
+      frameCount={324}
+      frameWidth={680}
+      frameHeight={480}
+    />
+  ),
+};
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [selectedDock, setSelectedDock] = useState('home');
+  const { theme } = useTheme();
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+  const handleAnimationComplete = () => {
+    setCurrentWordIndex((prev) => (prev + 1) % cyclingWords.length);
+  };
+
+  const handleDockIconClick = (dock: string) => {
+    setSelectedDock(dock);
+  };
+
+  // Filter circles based on selected dock
+  const filteredCircles = allCircles.filter(
+    circle => circle.dock === 'all' || selectedDock === 'home' || circle.dock === selectedDock
+  );
+
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 flex flex-col items-center justify-center test-bg">
+      <header className="absolute top-0 left-0 right-0 p-6 z-10 flex justify-between items-center">
+        <div className="flex items-center gap-4">
+          <h1 className="text-3xl font-bold tracking-tight text-neutral-700 dark:text-neutral-300 font-['Inter']">
+            reid{' '}
+            <TextLoop
+              className="overflow-y-clip"
+              interval={2}
+              transition={{
+                type: 'spring',
+                stiffness: 900,
+                damping: 80,
+                mass: 10,
+              }}
+              variants={{
+                initial: {
+                  y: 20,
+                  rotateX: 90,
+                  opacity: 0,
+                  filter: 'blur(4px)',
+                },
+                animate: {
+                  y: 0,
+                  rotateX: 0,
+                  opacity: 1,
+                  filter: 'blur(0px)',
+                },
+                exit: {
+                  y: -20,
+                  rotateX: -90,
+                  opacity: 0,
+                  filter: 'blur(4px)',
+                },
+              }}
+            >
+              {cyclingWords.map((item, index) => (
+                <span key={index} className="text-neutral-700 dark:text-neutral-300">{item.text}</span>
+              ))}
+            </TextLoop>
+          </h1>
+          <div className="text-sm text-neutral-500 dark:text-neutral-400">
+            Current theme: {theme}
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
+        <ThemeToggle />
+      </header>
+      <PhysicsContainer
+        key={selectedDock}
+        balls={filteredCircles}
+        memojiConfig={memojiConfig}
+      >
+        <div
+          style={{
+            position: 'absolute',
+            left: '50%',
+            bottom: 0,
+            transform: 'translateX(-50%)',
+            width: 400,
+            display: 'flex',
+            alignItems: 'flex-end',
+            justifyContent: 'center',
+            pointerEvents: 'auto',
+            zIndex: 10,
+          }}
         >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+        </div>
+      </PhysicsContainer>
+      <div className="absolute bottom-0 w-full z-10">
+        <AppleStyleDock onIconClick={handleDockIconClick} />
+      </div>
     </div>
   );
 }
