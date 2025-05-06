@@ -8,6 +8,7 @@ import { EducationCircle } from '@/components/circles/EducationCircle';
 import { SkillsCircle } from '@/components/circles/SkillsCircle';
 import { SunCircle } from '@/components/circles/SunCircle';
 import { MoonCircle } from '@/components/circles/MoonCircle';
+import { GlobeCircle } from '@/components/circles/GlobeCircle';
 import { Leaf, FileText, Mail, Phone, MapPin, GraduationCap, Sun, Moon } from 'lucide-react';
 
 export type CircleConfig = {
@@ -179,16 +180,13 @@ export const allCircles: CircleConfig[] = shuffle([
     },
   },
   {
-    id: 'location',
+    id: 'globe',
     label: 'Location',
     dock: 'contact',
-    size: 150,
-    color: '#ededed',
-    component: PhysicsBall,
-    props: {
-      content: 'Location',
-      icon: MapPin,
-    },
+    size: 85,
+    color: '#4a90e2',
+    component: GlobeCircle,
+    props: {},
   },
   {
     id: 'blank_1',
@@ -209,7 +207,7 @@ export const allCircles: CircleConfig[] = shuffle([
     id: 'sun',
     label: 'Light Mode',
     dock: 'themes',
-    size: 80,
+    size: 100,
     color: '#fbbf24',
     component: SunCircle,
     props: {},
