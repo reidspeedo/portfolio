@@ -2,6 +2,7 @@ import { usePhysicsWorld } from '@/lib/usePhysicsWorld';
 import { PhysicsBall } from '@/components/physics/PhysicsBall';
 import { useRouter } from 'next/navigation';
 import { CircleConfig } from '@/lib/circles';
+import { useMemo } from 'react';
 
 export type MemojiConfig = {
   size: number;
@@ -21,7 +22,20 @@ export function PhysicsContainer({
   memojiConfig: MemojiConfig;
   children?: React.ReactNode;
 }) {
-  const { sceneRef, ballStates, memojiState, isClient } = usePhysicsWorld({ balls, memojiConfig });
+  // Create a stable reference for the balls that only changes when the actual ball configuration changes
+  const stableBalls = useMemo(() => balls.map(ball => ({
+    ...ball,
+    props: {
+      ...ball.props,
+      // Remove onClick from the physics simulation props
+      onClick: undefined
+    }
+  })), [balls.map(b => b.id).join(',')]);
+
+  const { sceneRef, ballStates, memojiState, isClient } = usePhysicsWorld({ 
+    balls: stableBalls, 
+    memojiConfig 
+  });
   const router = useRouter();
 
   if (!isClient) {

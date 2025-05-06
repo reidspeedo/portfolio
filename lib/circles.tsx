@@ -6,7 +6,9 @@ import { MyStoryCircle } from '@/components/circles/MyStoryCircle';
 import { WorkExperienceCircle } from '@/components/circles/WorkExperienceCircle';
 import { EducationCircle } from '@/components/circles/EducationCircle';
 import { SkillsCircle } from '@/components/circles/SkillsCircle';
-import { Leaf, FileText, Mail, Phone, MapPin, GraduationCap } from 'lucide-react';
+import { SunCircle } from '@/components/circles/SunCircle';
+import { MoonCircle } from '@/components/circles/MoonCircle';
+import { Leaf, FileText, Mail, Phone, MapPin, GraduationCap, Sun, Moon } from 'lucide-react';
 
 export type CircleConfig = {
   id: string;
@@ -201,4 +203,24 @@ export const allCircles: CircleConfig[] = shuffle([
     },
   },
   ...smallCircles,
+
+  // Theme Circles
+  {
+    id: 'sun',
+    label: 'Light Mode',
+    dock: 'themes',
+    size: 80,
+    color: '#fbbf24',
+    component: SunCircle,
+    props: {},
+  },
+  {
+    id: 'moon',
+    label: 'Dark Mode',
+    dock: 'themes',
+    size: 50,
+    color: '#4b5563',
+    component: MoonCircle,
+    props: {},
+  },
 ]); 

@@ -4,7 +4,6 @@ import { AppleStyleDock } from '@/components/core/AppleStyleDock';
 import { TextLoop } from '@/components/motion-primitives/text-loop';
 import { PhysicsContainer } from '@/components/physics/PhysicsContainer';
 import { MemojiSprite } from '@/components/memoji/MemojiSprite';
-import { ThemeToggle } from '@/components/theme/theme-toggle';
 import { useTheme } from '@/components/theme/theme-provider';
 import { useState } from 'react';
 import { allCircles } from '@/lib/circles';
@@ -32,7 +31,7 @@ const memojiConfig = {
 export default function Home() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [selectedDock, setSelectedDock] = useState('home');
-  const { theme } = useTheme();
+  const { setTheme } = useTheme();
 
   const handleAnimationComplete = () => {
     setCurrentWordIndex((prev) => (prev + 1) % cyclingWords.length);
@@ -45,7 +44,27 @@ export default function Home() {
   // Filter circles based on selected dock
   const filteredCircles = allCircles.filter(
     circle => circle.dock === 'all' || selectedDock === 'home' || circle.dock === selectedDock
-  );
+  ).map(circle => {
+    if (circle.id === 'sun') {
+      return {
+        ...circle,
+        props: {
+          ...circle.props,
+          onClick: () => setTheme('light')
+        }
+      };
+    }
+    if (circle.id === 'moon') {
+      return {
+        ...circle,
+        props: {
+          ...circle.props,
+          onClick: () => setTheme('dark')
+        }
+      };
+    }
+    return circle;
+  });
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 flex flex-col items-center justify-center test-bg">
@@ -88,12 +107,9 @@ export default function Home() {
               ))}
             </TextLoop>
           </h1>
-          
         </div>
-        {/* <ThemeToggle /> */}
       </header>
       <PhysicsContainer
-        key={selectedDock}
         balls={filteredCircles}
         memojiConfig={memojiConfig}
       >

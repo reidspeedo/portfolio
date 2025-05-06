@@ -24,17 +24,14 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
 
   // Only run on client-side
   useEffect(() => {
-    console.log('Initial mount - checking theme');
     setMounted(true);
     // Check localStorage for saved theme preference
     const savedTheme = localStorage.getItem('theme') as Theme | null;
-    console.log('Saved theme:', savedTheme);
     if (savedTheme) {
       setTheme(savedTheme);
     } else {
       // Only use system preference if no saved preference exists
       const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      console.log('System prefers dark:', systemPrefersDark);
       setTheme(systemPrefersDark ? 'dark' : 'light');
     }
   }, []);
@@ -42,7 +39,6 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   useEffect(() => {
     if (!mounted) return;
     
-    console.log('Theme changed to:', theme);
     const root = window.document.documentElement;
     const body = window.document.body;
     
