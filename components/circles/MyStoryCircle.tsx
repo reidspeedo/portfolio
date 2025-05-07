@@ -8,9 +8,10 @@ interface MyStoryCircleProps {
   y: number;
   angle: number;
   size: number;
+  color: string;
 }
 
-export function MyStoryCircle({ x, y, angle, size }: MyStoryCircleProps) {
+export function MyStoryCircle({ x, y, angle, size, color }: MyStoryCircleProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
@@ -24,8 +25,9 @@ export function MyStoryCircle({ x, y, angle, size }: MyStoryCircleProps) {
           width: size,
           height: size,
           transform: `rotate(${angle}rad)`,
+          backgroundColor: color,
         }}
-        className="rounded-full bg-orange-400 flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200"
+        className="rounded-full flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200"
       >
         <BookOpen className="w-1/2 h-1/2 text-white mb-1" />
         <span className="text-white font-semibold text-sm" style={{lineHeight: 1}}>My Story</span>

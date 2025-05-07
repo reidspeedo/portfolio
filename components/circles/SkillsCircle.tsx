@@ -8,9 +8,10 @@ interface SkillsCircleProps {
   y: number;
   angle: number;
   size: number;
+  color: string;
 }
 
-export function SkillsCircle({ x, y, angle, size }: SkillsCircleProps) {
+export function SkillsCircle({ x, y, angle, size, color }: SkillsCircleProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
@@ -24,8 +25,9 @@ export function SkillsCircle({ x, y, angle, size }: SkillsCircleProps) {
           width: size,
           height: size,
           transform: `rotate(${angle}rad)`,
+          backgroundColor: color,
         }}
-        className="rounded-full bg-pink-500 flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200"
+        className={`rounded-full flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200`}
       >
         <Sparkles className="w-1/2 h-1/2 text-white mb-1" />
         <span className="text-white font-semibold text-sm text-center" style={{lineHeight: 1}}>Skills</span>

@@ -8,9 +8,10 @@ interface EducationCircleProps {
   y: number;
   angle: number;
   size: number;
+  color: string;
 }
 
-export function EducationCircle({ x, y, angle, size }: EducationCircleProps) {
+export function EducationCircle({ x, y, angle, size, color }: EducationCircleProps) {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
   return (
@@ -24,8 +25,9 @@ export function EducationCircle({ x, y, angle, size }: EducationCircleProps) {
           width: size,
           height: size,
           transform: `rotate(${angle}rad)`,
+          backgroundColor: color,
         }}
-        className="rounded-full bg-emerald-500 flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200"
+        className={`rounded-full flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200`}
       >
         <GraduationCap className="w-1/2 h-1/2 text-white mb-1" />
         <span className="text-white font-semibold text-sm text-center" style={{lineHeight: 1}}>Education</span>

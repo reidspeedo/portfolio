@@ -9,6 +9,8 @@ import { SkillsCircle } from '@/components/circles/SkillsCircle';
 import { SunCircle } from '@/components/circles/SunCircle';
 import { MoonCircle } from '@/components/circles/MoonCircle';
 import { GlobeCircle } from '@/components/circles/GlobeCircle';
+import { EmailCircle } from '@/components/circles/EmailCircle';
+import { PhoneCircle } from '@/components/circles/PhoneCircle';
 import { Leaf, FileText, Mail, Phone, MapPin, GraduationCap, Sun, Moon } from 'lucide-react';
 
 export type CircleConfig = {
@@ -49,7 +51,7 @@ export const allCircles: CircleConfig[] = shuffle([
     label: 'Twitter',
     dock: 'lets-hang',
     size: 175,
-    color: '#1DA1F2',
+    color: '#1Da1f2',
     component: TwitterCircle,
     props: {
       href: 'https://twitter.com/reidrelatores',
@@ -60,7 +62,7 @@ export const allCircles: CircleConfig[] = shuffle([
     label: 'GitHub',
     dock: 'lets-hang',
     size: 150,
-    color: '#333333',
+    color: '#2b3137',
     component: GithubCircle,
     props: {
       href: 'https://github.com/reidrelatores',
@@ -71,50 +73,13 @@ export const allCircles: CircleConfig[] = shuffle([
     label: 'LinkedIn',
     dock: 'lets-hang',
     size: 120,
-    color: '#0077B5',
+    color: '#5dd9c1',
     component: LinkedInCircle,
     props: {
       href: 'https://linkedin.com/in/reidrelatores',
     },
   },
 
-  // Project Circles (Generic)
-  {
-    id: 'leadblooms',
-    label: 'Leadblooms',
-    dock: 'projects',
-    size: 100,
-    color: '#ededed',
-    component: PhysicsBall,
-    props: {
-      content: 'Leadblooms',
-      icon: Leaf,
-    },
-  },
-  {
-    id: 'screenresumes',
-    label: 'ScreenResumes',
-    dock: 'projects',
-    size: 120,
-    color: '#ededed',
-    component: PhysicsBall,
-    props: {
-      content: 'ScreenResumes',
-      icon: FileText,
-    },
-  },
-  {
-    id: 'sociallistening',
-    label: 'Social Listening Tool',
-    dock: 'projects',
-    size: 210,
-    color: '#ededed',
-    component: PhysicsBall,
-    props: {
-      content: 'Social Listening',
-      icon: GraduationCap,
-    },
-  },
 
   // About Circles (Custom Components)
   {
@@ -122,7 +87,7 @@ export const allCircles: CircleConfig[] = shuffle([
     label: 'My Story',
     dock: 'about',
     size: 150,
-    color: '#ededed',
+    color: '#b084cc',
     component: MyStoryCircle,
     props: {},
   },
@@ -131,7 +96,7 @@ export const allCircles: CircleConfig[] = shuffle([
     label: 'Skills',
     dock: 'about',
     size: 140,
-    color: '#ededed',
+    color: '#190933',
     component: SkillsCircle,
     props: {},
   },
@@ -140,7 +105,7 @@ export const allCircles: CircleConfig[] = shuffle([
     label: 'Experience',
     dock: 'about',
     size: 165,
-    color: '#ededed',
+    color: '#665687',
     component: WorkExperienceCircle,
     props: {},
   },
@@ -149,56 +114,38 @@ export const allCircles: CircleConfig[] = shuffle([
     label: 'Education',
     dock: 'about',
     size: 110,
-    color: '#ededed',
+    color: '#b084cc',
     component: EducationCircle,
     props: {},
   },
 
-  // Contact Circles (Generic)
+  // Contact Circles (Custom Components)
   {
     id: 'email',
     label: 'Email',
     dock: 'contact',
     size: 155,
-    color: '#ededed',
-    component: PhysicsBall,
-    props: {
-      content: 'Email',
-      icon: Mail,
-    },
+    color: '#b084cc',
+    component: EmailCircle,
+    props: {},
   },
   {
     id: 'phone',
     label: 'Phone',
     dock: 'contact',
     size: 130,
-    color: '#ededed',
-    component: PhysicsBall,
-    props: {
-      content: 'Phone',
-      icon: Phone,
-    },
+    color: '#acfcd9',
+    component: PhoneCircle,
+    props: {},
   },
   {
     id: 'globe',
     label: 'Location',
     dock: 'contact',
     size: 85,
-    color: '#4a90e2',
+    color: '#665687',
     component: GlobeCircle,
     props: {},
-  },
-  {
-    id: 'blank_1',
-    label: '',
-    dock: 'home',
-    size: 40,
-    color: '#ededed',
-    component: PhysicsBall,
-    props: {
-      content: 'Location',
-      icon: MapPin,
-    },
   },
   ...smallCircles,
 
@@ -208,7 +155,7 @@ export const allCircles: CircleConfig[] = shuffle([
     label: 'Light Mode',
     dock: 'themes',
     size: 100,
-    color: '#fbbf24',
+    color: '#acfcd9',
     component: SunCircle,
     props: {},
   },
@@ -217,7 +164,7 @@ export const allCircles: CircleConfig[] = shuffle([
     label: 'Dark Mode',
     dock: 'themes',
     size: 50,
-    color: '#4b5563',
+    color: '#190933',
     component: MoonCircle,
     props: {},
   },

@@ -9,9 +9,10 @@ interface TwitterCircleProps {
   angle: number;
   size: number;
   href: string;
+  color: string;
 }
 
-export function TwitterCircle({ x, y, angle, size, href }: TwitterCircleProps) {
+export function TwitterCircle({ x, y, angle, size, href, color }: TwitterCircleProps) {
   const router = useRouter();
 
   const handleClick = () => {
@@ -33,8 +34,9 @@ export function TwitterCircle({ x, y, angle, size, href }: TwitterCircleProps) {
         height: size,
         transform: `rotate(${angle}rad)`,
         cursor: 'pointer',
+        backgroundColor: color,
       }}
-      className="rounded-full bg-[#1DA1F2] flex items-center justify-center hover:opacity-90 transition-opacity"
+      className="rounded-full flex items-center justify-center hover:opacity-90 transition-opacity"
     >
       <Twitter className="w-1/2 h-1/2 text-white" />
     </div>

@@ -13,7 +13,7 @@ export type MemojiConfig = {
   content: React.ReactNode;
 };
 
-const CONTAINER_WIDTH = 700;
+const CONTAINER_WIDTH = 1000;
 const CONTAINER_HEIGHT = 600;
 const WALL_THICKNESS = 100;
 
