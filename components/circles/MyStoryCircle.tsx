@@ -1,6 +1,6 @@
 'use client';
 
-import { BookOpen, X } from 'lucide-react';
+import { Signature, X } from 'lucide-react';
 import { useState } from 'react';
 
 interface MyStoryCircleProps {
@@ -27,10 +27,12 @@ export function MyStoryCircle({ x, y, angle, size, color }: MyStoryCircleProps) 
           transform: `rotate(${angle}rad)`,
           backgroundColor: color,
         }}
-        className="rounded-full flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200"
+        className="rounded-full flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200 group relative"
       >
-        <BookOpen className="w-1/2 h-1/2 text-white mb-1" />
-        <span className="text-white font-semibold text-sm" style={{lineHeight: 1}}>My Story</span>
+        <Signature className="w-1/2 h-1/2 text-white mb-1" />
+        <span className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
+          <span className="text-white font-medium">My Story</span>
+        </span>
       </div>
 
       {isDialogOpen && (
@@ -38,7 +40,7 @@ export function MyStoryCircle({ x, y, angle, size, color }: MyStoryCircleProps) 
           <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                <BookOpen className="w-6 h-6" />
+                <Signature className="w-6 h-6" />
                 My Story
               </h2>
               <button

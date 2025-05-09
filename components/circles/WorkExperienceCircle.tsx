@@ -1,6 +1,6 @@
 'use client';
 
-import { Briefcase, X } from 'lucide-react';
+import { Briefcase, Building2, X } from 'lucide-react';
 import { useState } from 'react';
 
 interface WorkExperienceCircleProps {
@@ -25,10 +25,13 @@ export function WorkExperienceCircle({ x, y, angle, size }: WorkExperienceCircle
           height: size,
           transform: `rotate(${angle}rad)`,
         }}
-        className="rounded-full bg-blue-500 flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200"
+        className="rounded-full bg-blue-500 flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200 group relative"
       >
-        <Briefcase className="w-1/2 h-1/2 text-white mb-1" />
-        <span className="text-white font-semibold text-sm text-center" style={{lineHeight: 1}}>Work Experience</span>
+        <Building2 className="w-1/2 h-1/2 text-white mb-1" />
+        <span className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
+          <span className="text-white font-medium">Experience</span>
+        </span>
+        {/* <span className="text-white font-semibold text-sm text-center" style={{lineHeight: 1}}>Work Experience</span> */}
       </div>
 
       {isDialogOpen && (
@@ -36,7 +39,7 @@ export function WorkExperienceCircle({ x, y, angle, size }: WorkExperienceCircle
           <div className="bg-white dark:bg-gray-800 rounded-lg p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-6">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white flex items-center gap-2">
-                <Briefcase className="w-6 h-6" />
+                <Building2 className="w-6 h-6" />
                 Work Experience
               </h2>
               <button

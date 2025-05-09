@@ -20,7 +20,7 @@ export function SunCircle({ x, y, angle, size, onClick }: SunCircleProps) {
         height: size,
         transform: `rotate(${angle}rad)`,
       }}
-      className="flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-100"
+      className="flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-100 group relative"
     >
       <div
         style={{

@@ -27,10 +27,12 @@ export function EmailCircle({ x, y, angle, size, color }: EmailCircleProps) {
           transform: `rotate(${angle}rad)`,
           backgroundColor: color,
         }}
-        className={`rounded-full flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200`}
+        className={`rounded-full flex flex-col items-center justify-center shadow-lg cursor-pointer hover:scale-105 transition-transform duration-200 group relative`}
       >
         <Mail className="w-1/2 h-1/2 text-white mb-1" />
-        <span className="text-white font-semibold text-sm text-center" style={{lineHeight: 1}}>Email</span>
+        <span className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
+          <span className="text-white font-medium">Email</span>
+        </span>
       </div>
 
       {isDialogOpen && (

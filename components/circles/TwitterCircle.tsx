@@ -36,9 +36,12 @@ export function TwitterCircle({ x, y, angle, size, href, color }: TwitterCircleP
         cursor: 'pointer',
         backgroundColor: color,
       }}
-      className="rounded-full flex items-center justify-center hover:opacity-90 transition-opacity"
+      className="rounded-full flex items-center justify-center hover:opacity-90 transition-opacity group relative"
     >
       <Twitter className="w-1/2 h-1/2 text-white" />
+      <span className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
+        <span className="text-white font-medium">Twitter</span>
+      </span>
     </div>
   );
 } 

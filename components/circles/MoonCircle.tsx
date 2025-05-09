@@ -20,7 +20,7 @@ export function MoonCircle({ x, y, angle, size, onClick }: MoonCircleProps) {
         height: size,
         transform: `rotate(${angle}rad)`,
       }}
-      className="flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-200"
+      className="flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-200 group relative"
     >
       <div
         style={{

@@ -23,7 +23,7 @@ export function GlobeCircle({ x, y, angle, size }: GlobeCircleProps) {
           height: size,
           transform: `rotate(${angle}rad)`,
         }}
-        className="flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-200"
+        className="flex items-center justify-center cursor-pointer hover:scale-105 transition-transform duration-200 group relative"
       >
         <div
           style={{
@@ -47,6 +47,9 @@ export function GlobeCircle({ x, y, angle, size }: GlobeCircleProps) {
               display: 'block',
             }}
           />
+          <span className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
+            <span className="text-white font-medium">Location</span>
+          </span>
         </div>
       </div>
 
