@@ -288,9 +288,9 @@ const colorSchemes: ColorScheme[] = [
     name: 'Cyberpunk',
     colors: {
       social: {
-        twitter: '#ff2a6d', // Hot pink
-        github: '#05d9e8', // Electric blue
-        linkedin: '#d1f7ff', // Light cyan
+        twitter: '#1DA1F2', // Hot pink
+        github: '#2b3137', // Electric blue
+        linkedin: '#0077B5', // Light cyan
       },
       about: {
         myStory: '#ff71ce', // Neon pink
