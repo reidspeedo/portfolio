@@ -25,12 +25,16 @@ export function EducationCircle({ x, y, angle, size, color }: EducationCirclePro
           width: size,
           height: size,
           transform: `rotate(${angle}rad)`,
-          backgroundColor: color,
         }}
-        className={`rounded-full flex flex-col items-center justify-center shadow-lg cursor-pointer group relative overflow-hidden`}
+        className="rounded-full flex flex-col items-center justify-center shadow-lg cursor-pointer group relative overflow-hidden bg-[#1a1a1a] dark:bg-[#f9fafb]"
       >
-        <GraduationCap className="w-1/2 h-1/2 text-white mb-1 transition-transform duration-300 group-hover:scale-110" />
-        <div className="absolute inset-0 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform origin-center scale-0 group-hover:scale-100">
+        <GraduationCap
+          className="w-1/2 h-1/2 mb-1 transition-transform duration-300 group-hover:scale-110 text-[#f9fafb] dark:text-[#1a1a1a]"
+        />
+        <div 
+          className="absolute inset-0 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform origin-center scale-0 group-hover:scale-100"
+          style={{ backgroundColor: `${color}` }}
+        >
           <span className="absolute inset-0 flex items-center justify-center text-white font-medium">
             Education
           </span>
