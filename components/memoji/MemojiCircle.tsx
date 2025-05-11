@@ -12,7 +12,7 @@ export function MemojiCircle({ size = 240 }: { size?: number }) {
         borderRadius: '50%',
         overflow: 'hidden',
         border: '4px solid #eee',
-        background: '#222',
+        background: '#2b3137',
         transform: `translate(-50%, -50%)`,
         zIndex: 2,
         display: 'flex',
