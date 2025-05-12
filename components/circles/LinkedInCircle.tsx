@@ -3,6 +3,7 @@
 import { Linkedin } from 'lucide-react';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { SpinningText } from '@/components/motion-primitives/spinning-text';
 
 interface LinkedInCircleProps {
   x: number;
@@ -10,9 +11,10 @@ interface LinkedInCircleProps {
   angle: number;
   size: number;
   color: string;
+  href: string;
 }
 
-export function LinkedInCircle({ x, y, angle, size, color }: LinkedInCircleProps) {
+export function LinkedInCircle({ x, y, angle, size, color, href }: LinkedInCircleProps) {
   const router = useRouter();
   const [isDialogOpen, setIsDialogOpen] = useState(false);
 
@@ -26,7 +28,7 @@ export function LinkedInCircle({ x, y, angle, size, color }: LinkedInCircleProps
 
   return (
     <div
-      onClick={() => setIsDialogOpen(true)}
+      onClick={handleClick}
       style={{
         position: 'absolute',
         left: x - size / 2,
@@ -41,7 +43,14 @@ export function LinkedInCircle({ x, y, angle, size, color }: LinkedInCircleProps
       <Linkedin className="w-1/2 h-1/2 text-white mb-1 transition-transform duration-300 group-hover:scale-110" />
       <div className="absolute inset-0 bg-black/50 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300 transform origin-center scale-0 group-hover:scale-100">
         <span className="absolute inset-0 flex items-center justify-center text-white font-medium">
-          LinkedIn
+        <SpinningText
+                duration={8}
+                fontSize={0.9}
+                radius={size / 18.5}
+                className="font-bold text-white drop-shadow-md"
+              >
+                LinkedIn • LinkedIn • 
+          </SpinningText>
         </span>
       </div>
     </div>

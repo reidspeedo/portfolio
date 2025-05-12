@@ -1,6 +1,6 @@
 import { Globe, X } from 'lucide-react';
 import { useState } from 'react';
-
+import { SpinningText } from '@/components/motion-primitives/spinning-text';
 interface GlobeCircleProps {
   x: number;
   y: number;
@@ -48,7 +48,16 @@ export function GlobeCircle({ x, y, angle, size }: GlobeCircleProps) {
             }}
           />
           <span className="absolute inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-50">
-            <span className="text-white font-medium">Location</span>
+            <span className="text-white font-medium">
+            <SpinningText
+                duration={8}
+                fontSize={0.9}
+                radius={size / 18.5}
+                className="font-bold text-white drop-shadow-md"
+              >
+                Location • Location •
+              </SpinningText>
+            </span>
           </span>
         </div>
       </div>

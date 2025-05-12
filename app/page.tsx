@@ -9,10 +9,11 @@ import { useState } from 'react';
 import { allCircles } from '@/lib/circles';
 
 const cyclingWords = [
-  { text: "built this portfolio" },
   { text: "is a full stack dev" },
-  { text: "has built saas tools" },
-  { text: "specializes in data integration" },
+  { text: "built this portfolio" },
+  { text: "codes for fun" },
+  { text: "has developed & sold saas tools" },
+  { text: "works as a integration engineer" },
   { text: "likes to automate things" },
 ];
 
