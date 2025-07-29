@@ -8,6 +8,17 @@ module.exports = {
   darkMode: 'class',
   theme: {
     extend: {
+      fontFamily: {
+        'inter': ['var(--font-inter)', 'sans-serif'],
+        'roboto': ['var(--font-roboto)', 'sans-serif'],
+        'open-sans': ['var(--font-open-sans)', 'sans-serif'],
+        'poppins': ['var(--font-poppins)', 'sans-serif'],
+        'montserrat': ['var(--font-montserrat)', 'sans-serif'],
+        // These will automatically use your custom properties
+        'primary': ['var(--font-primary)', 'sans-serif'],
+        'secondary': ['var(--font-secondary)', 'sans-serif'],
+        'accent': ['var(--font-accent)', 'sans-serif'],
+      },
       colors: {
         neutral: {
           50: '#fafafa',

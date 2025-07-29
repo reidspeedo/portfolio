@@ -70,7 +70,7 @@ export default function Home() {
     <div className="min-h-screen bg-gray-50 dark:bg-neutral-900 text-neutral-700 dark:text-neutral-300 flex flex-col items-center justify-center test-bg">
       <header className="absolute top-0 left-0 right-0 p-6 z-10 flex justify-between items-center">
         <div className="flex items-center gap-4">
-          <h1 className="text-3xl font-bold tracking-tight text-neutral-700 dark:text-neutral-300 font-['Inter']">
+          <h1 className="text-3xl font-bold tracking-tight text-neutral-700 dark:text-neutral-300">
             reid{' '}
             <TextLoop
               className="overflow-y-clip"

@@ -2,8 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Define CSS custom properties for fonts */
+:root {
+  --font-primary: var(--font-open-sans);
+  --font-secondary: var(--font-roboto);
+  --font-accent: var(--font-inter);
+}
+
+/* Apply fonts globally using CSS custom properties */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-primary), sans-serif;
   transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Override Tailwind's default font classes to use our custom properties */
+.font-sans {
+  font-family: var(--font-primary), sans-serif !important;
+}
+
+.font-serif {
+  font-family: var(--font-secondary), serif !important;
+}
+
+.font-mono {
+  font-family: var(--font-accent), monospace !important;
+}
+
+/* Custom font utility classes */
+.font-primary {
+  font-family: var(--font-primary), sans-serif;
+}
+
+.font-secondary {
+  font-family: var(--font-secondary), sans-serif;
+}
+
+.font-accent {
+  font-family: var(--font-accent), sans-serif;
 }
 
