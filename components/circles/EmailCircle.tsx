@@ -43,7 +43,7 @@ export function EmailCircle({ x, y, angle, size, color }: EmailCircleProps) {
                 radius={size / 18.5}
                 className="font-bold text-white drop-shadow-md"
               >
-                Email • Email • Email •
+                email • email • email •
               </SpinningText>
           </span>
         </div>
@@ -122,7 +122,7 @@ export function EmailCircle({ x, y, angle, size, color }: EmailCircleProps) {
                     href="mailto:reidrelatores@gmail.com"
                     className="text-blue-600 dark:text-blue-400 hover:underline text-2xl font-bold mb-2"
                   >
-                    reidrelatores@gmail.com
+                    reid.porfolio@gmail.com
                   </a>
                   <p className="text-gray-700 dark:text-gray-300 text-center">
                     I typically respond within 24 hours.

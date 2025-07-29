@@ -91,16 +91,7 @@ export function EducationCircle({ x, y, angle, size, color }: EducationCirclePro
                   <GraduationCap className="w-8 h-8" />
                   Education
                 </h2>
-                <div className="mb-6 flex justify-center">
-                  <SpinningText
-                    duration={10}
-                    fontSize={1.1}
-                    radius={4}
-                    className="font-bold text-emerald-600 dark:text-emerald-400"
-                  >
-                    Education • Education • Education •
-                  </SpinningText>
-                </div>
+                
                 <motion.p
                   className="text-lg text-gray-700 dark:text-gray-200 mb-6"
                   initial={{ y: 30, opacity: 0 }}

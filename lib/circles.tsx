@@ -11,6 +11,10 @@ import { MoonCircle } from '@/components/circles/MoonCircle';
 import { GlobeCircle } from '@/components/circles/GlobeCircle';
 import { EmailCircle } from '@/components/circles/EmailCircle';
 import { PhoneCircle } from '@/components/circles/PhoneCircle';
+import { LeadBloomsCircle } from '@/components/circles/LeadBloomsCircle';
+import { RankMyCandidatesCircle } from '@/components/circles/RankMyCandidatesCircle';
+import { SocialListeningCircle } from '@/components/circles/SocialListeningCircle';
+import { OtherProjectsCircle } from '@/components/circles/OtherProjectsCircle';
 
 export type CircleConfig = {
   id: string;
@@ -46,6 +50,12 @@ type ColorScheme = {
       moon: string;
     };
     smallCircles: string;
+    projects: {
+      leadblooms: string;
+      rankmycandidates: string;
+      sociallistening: string;
+      otherprojects: string;
+    };
   };
 };
 
@@ -74,6 +84,12 @@ const colorSchemes: ColorScheme[] = [
         moon: '#1e293b',
       },
       smallCircles: '#e2e8f0',
+      projects: {
+        leadblooms: '#4f46e5',
+        rankmycandidates: '#7c3aed',
+        sociallistening: '#7c3aed',
+        otherprojects: '#7c3aed',
+      },
     },
   },
   {
@@ -100,6 +116,12 @@ const colorSchemes: ColorScheme[] = [
         moon: '#1e293b',
       },
       smallCircles: '#f3f4f6',
+      projects: {
+        leadblooms: '#b45309',
+        rankmycandidates: '#92400e',
+        sociallistening: '#92400e',
+        otherprojects: '#92400e',
+      },
     },
   },
   {
@@ -126,6 +148,12 @@ const colorSchemes: ColorScheme[] = [
         moon: '#1e293b',
       },
       smallCircles: '#f1f5f9',
+      projects: {
+        leadblooms: '#0c4a6e',
+        rankmycandidates: '#075985',
+        sociallistening: '#075985',
+        otherprojects: '#075985',
+      },
     },
   },
   {
@@ -152,6 +180,12 @@ const colorSchemes: ColorScheme[] = [
         moon: '#1e293b',
       },
       smallCircles: '#f3f4f6',
+      projects: {
+        leadblooms: '#c026d3',
+        rankmycandidates: '#a21caf',
+        sociallistening: '#a21caf',
+        otherprojects: '#a21caf',
+      },
     },
   },
   {
@@ -178,6 +212,12 @@ const colorSchemes: ColorScheme[] = [
         moon: '#1a1a1a',
       },
       smallCircles: '#e5e5e5',
+      projects: {
+        leadblooms: '#404040',
+        rankmycandidates: '#4d4d4d',
+        sociallistening: '#4d4d4d',
+        otherprojects: '#4d4d4d',
+      },
     },
   },
   {
@@ -204,6 +244,12 @@ const colorSchemes: ColorScheme[] = [
         moon: '#171717',
       },
       smallCircles: '#f3f3f3',
+      projects: {
+        leadblooms: '#525252',
+        rankmycandidates: '#404040',
+        sociallistening: '#404040',
+        otherprojects: '#404040',
+      },
     },
   },
   {
@@ -230,6 +276,12 @@ const colorSchemes: ColorScheme[] = [
         moon: '#171717',
       },
       smallCircles: '#e6e6e6',
+      projects: {
+        leadblooms: '#525252',
+        rankmycandidates: '#666666',
+        sociallistening: '#666666',
+        otherprojects: '#666666',
+      },
     },
   },
   {
@@ -256,110 +308,172 @@ const colorSchemes: ColorScheme[] = [
         moon: '#000000',
       },
       smallCircles: '#f2f2f2',
+      projects: {
+        leadblooms: '#4d4d4d',
+        rankmycandidates: '#666666',
+        sociallistening: '#666666',
+        otherprojects: '#666666',
+      },
     },
   },
   {
     name: 'Neon Tron',
     colors: {
       social: {
-        twitter: '#00f3ff', // Bright cyan
-        github: '#ff00ff', // Magenta
-        linkedin: '#00ff9f', // Neon green
+        twitter: '#00f3ff',
+        github: '#ff00ff',
+        linkedin: '#00ff9f',
       },
       about: {
-        myStory: '#ff3e3e', // Neon red
-        skills: '#ffd700', // Neon yellow
-        experience: '#00ff9f', // Neon green
-        education: '#ff00ff', // Magenta
+        myStory: '#ff3e3e',
+        skills: '#00ffea',
+        experience: '#ff00ea',
+        education: '#00ff9f',
       },
       contact: {
-        email: '#00f3ff', // Bright cyan
-        phone: '#ff3e3e', // Neon red
-        globe: '#ffd700', // Neon yellow
+        email: '#ff3e3e',
+        phone: '#00ffea',
+        globe: '#ff00ea',
       },
       themes: {
         sun: '#ffffff',
         moon: '#000000',
       },
       smallCircles: '#1a1a1a',
+      projects: {
+        leadblooms: '#00f3ff',
+        rankmycandidates: '#ff00ff',
+        sociallistening: '#ff00ff',
+        otherprojects: '#ff00ff',
+      },
     },
   },
   {
     name: 'Cyberpunk',
     colors: {
       social: {
-        twitter: '#1DA1F2', // Hot pink
-        github: '#2b3137', // Electric blue
-        linkedin: '#0077B5', // Light cyan
+        twitter: '#1DA1F2',
+        github: '#2b3137',
+        linkedin: '#0077B5',
       },
       about: {
-        myStory: '#ff71ce', // Neon pink
-        skills: '#01cdfe', // Bright blue
-        experience: '#05ffa1', // Neon green
-        education: '#b967ff', // Purple
+        myStory: '#ff71ce',
+        skills: '#01cdfe',
+        experience: '#05ffa1',
+        education: '#b967ff',
       },
       contact: {
-        email: '#ff2a6d', // Hot pink
-        phone: '#05d9e8', // Electric blue
-        globe: '#ff71ce', // Neon pink
+        email: '#ff2a6d',
+        phone: '#05d9e8',
+        globe: '#ff71ce',
       },
       themes: {
         sun: '#ffffff',
         moon: '#000000',
       },
       smallCircles: '#f2f2f2',
+      projects: {
+        leadblooms: '#ff71ce',
+        rankmycandidates: '#01cdfe',
+        sociallistening: '#ff71ce',
+        otherprojects: '#ff71ce',
+      },
     },
   },
   {
     name: 'Synthwave',
     colors: {
       social: {
-        twitter: '#ff00ff', // Magenta
-        github: '#00ffff', // Cyan
-        linkedin: '#ff00aa', // Hot pink
+        twitter: '#ff00ff',
+        github: '#00ffff',
+        linkedin: '#ff00aa',
       },
       about: {
-        myStory: '#ff00ff', // Magenta
-        skills: '#00ffff', // Cyan
-        experience: '#ff00aa', // Hot pink
-        education: '#ff00ff', // Magenta
+        myStory: '#ff00ff',
+        skills: '#00ffff',
+        experience: '#ff00aa',
+        education: '#ff00ff',
       },
       contact: {
-        email: '#00ffff', // Cyan
-        phone: '#ff00aa', // Hot pink
-        globe: '#ff00ff', // Magenta
+        email: '#00ffff',
+        phone: '#ff00aa',
+        globe: '#ff00ff',
       },
       themes: {
         sun: '#ffffff',
         moon: '#000000',
       },
       smallCircles: '#1a1a1a',
+      projects: {
+        leadblooms: '#ff00ff',
+        rankmycandidates: '#00ffff',
+        sociallistening: '#00ffff',
+        otherprojects: '#00ffff',
+      },
+    },
+  },
+  {
+    name: 'Black and White',
+    colors: {
+      social: {
+        twitter: '#1DA1F2',
+        github: '#2b3137',
+        linkedin: '#0077B5',
+      },
+      about: {
+        myStory: '#999999',
+        skills: '#999999',
+        experience: '#999999',
+        education: '#999999',
+      },
+      contact: {
+        email: '#999999',
+        phone: '#999999',
+        globe: '#999999',
+      },
+      themes: {
+        sun: '#ffffff',
+        moon: '#000000',
+      },
+      smallCircles: '#f2f2f2',
+      projects: {
+        leadblooms: '#999999',
+        rankmycandidates: '#999999',
+        sociallistening: '#999999',
+        otherprojects: '#999999',
+      },
     },
   },
   {
     name: 'Neon Noir',
     colors: {
       social: {
-        twitter: '#00ffea', // Bright teal
-        github: '#ff00ea', // Neon pink
-        linkedin: '#00ff9f', // Neon green
+        twitter: '#00ffea',
+        github: '#ff00ea',
+        linkedin: '#00ff9f',
       },
       about: {
-        myStory: '#ff3e3e', // Neon red
-        skills: '#00ffea', // Bright teal
-        experience: '#ff00ea', // Neon pink
-        education: '#00ff9f', // Neon green
+        myStory: '#ff3e3e',
+        skills: '#00ffea',
+        experience: '#ff00ea',
+        education: '#00ff9f',
       },
       contact: {
-        email: '#ff3e3e', // Neon red
-        phone: '#00ffea', // Bright teal
-        globe: '#ff00ea', // Neon pink
+        email: '#ff3e3e',
+        phone: '#00ffea',
+        globe: '#ff00ea',
       },
       themes: {
         sun: '#ffffff',
         moon: '#000000',
       },
       smallCircles: '#1a1a1a',
+      projects: {
+        leadblooms: '#00ffea',
+        rankmycandidates: '#ff00ea',
+        sociallistening: '#00ffea',
+        otherprojects: '#00ffea',
+      },
     },
   },
 ];
@@ -390,17 +504,17 @@ export const getCircles = (schemeIndex: number = 0): CircleConfig[] => {
   
   return shuffle([
     // Social Media Circles (Custom Components)
-    {
-      id: 'twitter',
-      label: 'Twitter',
-      dock: 'lets-hang',
-      size: 175,
-      color: scheme.colors.social.twitter,
-      component: TwitterCircle,
-      props: {
-        href: 'https://twitter.com/reidrelatores',
-      },
-    },
+    // {
+    //   id: 'twitter',
+    //   label: 'Twitter',
+    //   dock: 'lets-hang',
+    //   size: 175,
+    //   color: scheme.colors.social.twitter,
+    //   component: TwitterCircle,
+    //   props: {
+    //     href: 'https://twitter.com/reidrelatores',
+    //   },
+    // },
     {
       id: 'github',
       label: 'GitHub',
@@ -514,7 +628,45 @@ export const getCircles = (schemeIndex: number = 0): CircleConfig[] => {
       component: MoonCircle,
       props: {},
     },
+
+    // Projects
+    {
+      id: 'leadblooms',
+      label: 'leadBlooms',
+      dock: 'projects',
+      size: 160,
+      color: scheme.colors.projects.leadblooms,
+      component: LeadBloomsCircle,
+      props: {},
+    },
+    {
+      id: 'rankmycandidates',
+      label: 'RankMyCandidates',
+      dock: 'projects',
+      size: 150,
+      color: scheme.colors.projects.rankmycandidates,
+      component: RankMyCandidatesCircle,
+      props: {},
+    },
+    // {
+    //   id: 'sociallistening',
+    //   label: 'SocialListening',
+    //   dock: 'projects',
+    //   size: 155,
+    //   color: scheme.colors.projects.sociallistening,
+    //   component: SocialListeningCircle,
+    //   props: {},
+    // },
+    {
+      id: 'otherprojects',
+      label: 'Other Projects',
+      dock: 'projects',
+      size: 145,
+      color: scheme.colors.projects.otherprojects,
+      component: OtherProjectsCircle,
+      props: {},
+    },
   ]);
 };
 
-export const allCircles = getCircles(9); 
+export const allCircles = getCircles(11); 

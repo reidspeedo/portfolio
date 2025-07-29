@@ -9,12 +9,11 @@ import { useState } from 'react';
 import { allCircles } from '@/lib/circles';
 
 const cyclingWords = [
-  { text: "is a full stack dev" },
+  { text: "is a full stack developer" },
+  { text: "likes to prototype things" },
   { text: "built this portfolio" },
-  { text: "codes for fun" },
-  { text: "has developed & sold saas tools" },
-  { text: "works as a integration engineer" },
   { text: "likes to automate things" },
+  { text: "codes for fun" },
 ];
 
 const memojiConfig = {

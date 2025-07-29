@@ -34,7 +34,7 @@ const data = [
     href: 'projects',
   },
   {
-    title: "Let's Hang",
+    title: "Social",
     icon: (
       <MessageSquare className='h-full w-full text-neutral-600 dark:text-neutral-300' />
     ),
