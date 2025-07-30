@@ -41,10 +41,10 @@ export function OtherProjectsCircle({ x, y, angle, size, color }: OtherProjectsC
             <SpinningText
               duration={8}
               fontSize={0.9}
-              radius={size / 18.5}
+              radius={size / 20}
               className="font-bold text-white drop-shadow-md"
             >
-              Other Projects • Other Projects • 
+              other projects • other projects • 
             </SpinningText>
           </span>
         </div>

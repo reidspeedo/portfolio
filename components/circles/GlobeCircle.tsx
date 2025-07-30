@@ -52,10 +52,10 @@ export function GlobeCircle({ x, y, angle, size }: GlobeCircleProps) {
             <SpinningText
                 duration={8}
                 fontSize={0.9}
-                radius={size / 18.5}
+                radius={size / 22}
                 className="font-bold text-white drop-shadow-md"
               >
-                Location • Location •
+                location • location •
               </SpinningText>
             </span>
           </span>

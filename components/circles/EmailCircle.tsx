@@ -40,7 +40,7 @@ export function EmailCircle({ x, y, angle, size, color }: EmailCircleProps) {
             <SpinningText
                 duration={8}
                 fontSize={0.9}
-                radius={size / 18.5}
+                radius={size / 20}
                 className="font-bold text-white drop-shadow-md"
               >
                 email • email • email •

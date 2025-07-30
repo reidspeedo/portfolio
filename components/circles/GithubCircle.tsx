@@ -40,7 +40,7 @@ export function GithubCircle({ x, y, angle, size, color, href }: GithubCirclePro
         <SpinningText
                 duration={8}
                 fontSize={0.9}
-                radius={size / 18.5}
+                radius={size / 20}
                 className="font-bold text-white drop-shadow-md"
               >
                 Github • Github • Github •

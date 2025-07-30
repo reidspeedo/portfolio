@@ -41,7 +41,7 @@ export function RankMyCandidatesCircle({ x, y, angle, size, color }: RankMyCandi
             <SpinningText
               duration={8}
               fontSize={0.9}
-              radius={size / 18.5}
+              radius={size / 20}
               className="font-bold text-white drop-shadow-md"
             >
               ScreenResumes • ScreenResumes • 

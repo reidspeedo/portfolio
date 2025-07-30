@@ -3,10 +3,11 @@
 @tailwind utilities;
 
 /* Define CSS custom properties for fonts */
+
 :root {
-  --font-primary: var(--font-open-sans);
-  --font-secondary: var(--font-roboto);
-  --font-accent: var(--font-inter);
+  --font-primary: var(--font-nunito);
+  --font-secondary: var(--font-open-sans);
+  --font-accent: var(--font-lato);
 }
 
 /* Apply fonts globally using CSS custom properties */

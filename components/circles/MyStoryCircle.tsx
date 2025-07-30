@@ -40,10 +40,10 @@ export function MyStoryCircle({ x, y, angle, size, color }: MyStoryCircleProps) 
           <SpinningText
                 duration={8}
                 fontSize={0.9}
-                radius={size / 18.5}
+                radius={size / 20}
                 className="font-bold text-white drop-shadow-md"
               >
-                My Story • My Story • My Story •
+                my story • my story • my story •
           </SpinningText>
           </span>
         </div>

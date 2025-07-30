@@ -40,10 +40,10 @@ export function PhoneCircle({ x, y, angle, size, color }: PhoneCircleProps) {
           <SpinningText
                 duration={8}
                 fontSize={0.9}
-                radius={size / 18.5}
+                radius={size / 20}
                 className="font-bold text-white drop-shadow-md"
               >
-                Phone • Phone • Phone •
+                phone • phone • phone •
           </SpinningText>
           </span>
         </div>
@@ -94,7 +94,7 @@ export function PhoneCircle({ x, y, angle, size, color }: PhoneCircleProps) {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.35, duration: 0.5 }}
                 >
-                  Reach out to me by phone during business hours. I look forward to connecting with you!
+                  Feel free to text or call me with any inquiries or opportunities.
                 </motion.p>
                 <button
                   onClick={() => setIsDialogOpen(false)}
@@ -119,13 +119,13 @@ export function PhoneCircle({ x, y, angle, size, color }: PhoneCircleProps) {
                   transition={{ delay: 0.45, duration: 0.5 }}
                 >
                   <p className="text-gray-700 dark:text-gray-300 mb-4 text-center">
-                    You can reach me by phone during business hours (9 AM - 5 PM EST).
+                    You can reach me by phone during business hours (9 AM - 5 PM PST).
                   </p>
                   <a 
                     href="tel:+1234567890"
                     className="text-green-600 dark:text-green-400 hover:underline text-2xl font-bold"
                   >
-                    (123) 456-7890
+                    (425) 243-3568
                   </a>
                 </motion.div>
               </motion.div>

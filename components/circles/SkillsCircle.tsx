@@ -40,10 +40,10 @@ export function SkillsCircle({ x, y, angle, size, color }: SkillsCircleProps) {
           <SpinningText
                 duration={8}
                 fontSize={0.9}
-                radius={size / 18.5}
+                radius={size / 20}
                 className="font-bold text-white drop-shadow-md"
               >
-                Skills • Skills • Skills •
+                skills • skills • skills •
           </SpinningText>
           </span>
         </div>

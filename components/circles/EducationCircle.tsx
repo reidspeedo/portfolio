@@ -42,10 +42,10 @@ export function EducationCircle({ x, y, angle, size, color }: EducationCirclePro
               <SpinningText
                 duration={8}
                 fontSize={0.9}
-                radius={size / 18.5}
+                radius={size / 20}
                 className="font-bold text-white drop-shadow-md"
-              >
-                Education • Education • 
+              > 
+                education • education • 
               </SpinningText>
             </span>
           </span>
@@ -98,7 +98,7 @@ export function EducationCircle({ x, y, angle, size, color }: EducationCirclePro
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.35, duration: 0.5 }}
                 >
-                  A journey of learning and growth, specializing in software engineering and modern web development.
+                  Self-taught software engineer with a formal background in systems and engineering design.
                 </motion.p>
                 <button
                   onClick={() => setIsDialogOpen(false)}
@@ -119,9 +119,9 @@ export function EducationCircle({ x, y, angle, size, color }: EducationCirclePro
                 <div className="relative pl-8 border-l-2 border-emerald-500">
                   <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-emerald-500"></div>
                   <div className="mb-2">
-                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Bachelor of Science in Computer Science</h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-300">University of Technology</p>
-                    <p className="text-sm text-gray-500 dark:text-gray-400">2018 - 2022</p>
+                    <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Bachelor of Science in Mechanical Engineering</h3>
+                    <p className="text-sm text-gray-600 dark:text-gray-300">Ohio State University</p>
+                    <p className="text-sm text-gray-500 dark:text-gray-400">2011 - 2016</p>
                   </div>
                   <motion.p
                     className="text-gray-700 dark:text-gray-300"
@@ -129,11 +129,11 @@ export function EducationCircle({ x, y, angle, size, color }: EducationCirclePro
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.45, duration: 0.5 }}
                   >
-                    Specialized in software engineering and web development. Graduated with honors.
+                    Focused on systems design, embedded software, and cross-disciplinary engineering.
                   </motion.p>
                 </div>
 
-                <div className="relative pl-8 border-l-2 border-emerald-500">
+                {/* <div className="relative pl-8 border-l-2 border-emerald-500">
                   <div className="absolute left-[-9px] top-0 w-4 h-4 rounded-full bg-emerald-500"></div>
                   <div className="mb-2">
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Advanced Web Development Bootcamp</h3>
@@ -148,7 +148,7 @@ export function EducationCircle({ x, y, angle, size, color }: EducationCirclePro
                   >
                     Intensive 12-week program focusing on modern web technologies and best practices.
                   </motion.p>
-                </div>
+                </div> */}
               </motion.div>
             </motion.div>
           </motion.div>
