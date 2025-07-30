@@ -44,7 +44,7 @@ export function LeadBloomsCircle({ x, y, angle, size, color }: LeadBloomsCircleP
               radius={size / 20}
               className="font-bold text-white drop-shadow-md"
             >
-              leadBlooms • leadBlooms • leadBlooms •
+              leadBlooms • leadBlooms • leadBlooms • 
             </SpinningText>
           </span>
         </div>

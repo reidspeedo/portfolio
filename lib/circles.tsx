@@ -523,20 +523,20 @@ export const getCircles = (schemeIndex: number = 0): CircleConfig[] => {
       color: scheme.colors.social.github,
       component: GithubCircle,
       props: {
-        href: 'https://github.com/reidrelatores',
+        href: 'https://github.com/reidspeedo',
       },
     },
-    {
-      id: 'linkedin',
-      label: 'LinkedIn',
-      dock: 'lets-hang',
-      size: 120,
-      color: scheme.colors.social.linkedin,
-      component: LinkedInCircle,
-      props: {
-        href: 'https://linkedin.com/in/reidrelatores',
-      },
-    },
+    // {
+    //   id: 'linkedin',
+    //   label: 'LinkedIn',
+    //   dock: 'lets-hang',
+    //   size: 120,
+    //   color: scheme.colors.social.linkedin,
+    //   component: LinkedInCircle,
+    //   props: {
+    //     href: 'https://linkedin.com/in/reidrelatores',
+    //   },
+    // },
 
     // About Circles (Custom Components)
     {

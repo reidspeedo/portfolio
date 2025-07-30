@@ -75,7 +75,7 @@ export function SkillsCircle({ x, y, angle, size, color }: SkillsCircleProps) {
                 opacity: 0,
               }}
               transition={{ type: 'spring', stiffness: 260, damping: 20 }}
-              className="bg-white dark:bg-gray-800 rounded-3xl p-0 max-w-3xl w-full max-h-[80vh] overflow-y-auto shadow-2xl flex flex-col md:flex-row"
+              className="bg-white dark:bg-gray-800 rounded-3xl p-0 max-w-4xl w-full max-h-[80vh] overflow-y-auto shadow-2xl flex flex-col md:flex-row"
             >
               {/* Left column: Heading and summary */}
               <motion.div
@@ -94,7 +94,7 @@ export function SkillsCircle({ x, y, angle, size, color }: SkillsCircleProps) {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.35, duration: 0.5 }}
                 >
-                  A blend of technical and soft skills, honed through hands-on experience and continuous learning.
+                  Technical expertise spanning full-stack development, AI integration, and enterprise system architecture.
                 </motion.p>
                 <button
                   onClick={() => setIsDialogOpen(false)}
@@ -107,13 +107,13 @@ export function SkillsCircle({ x, y, angle, size, color }: SkillsCircleProps) {
 
               {/* Right column: Skills grid */}
               <motion.div
-                className="flex-[2] p-8 grid grid-cols-1 sm:grid-cols-2 gap-8 overflow-y-auto"
+                className="flex-[2] p-8 grid grid-cols-1 sm:grid-cols-2 gap-6 overflow-y-auto"
                 initial={{ x: 40, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.3, duration: 0.5 }}
               >
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Frontend</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Frontend & Full-Stack</h3>
                   <motion.div
                     className="space-y-2"
                     initial={{ y: 20, opacity: 0 }}
@@ -121,21 +121,22 @@ export function SkillsCircle({ x, y, angle, size, color }: SkillsCircleProps) {
                     transition={{ delay: 0.45, duration: 0.5 }}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">React</span>
+                      <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">Next.js</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
+                      <div className="w-2 h-2 rounded-full bg-blue-500"></div>
                       <span className="text-gray-700 dark:text-gray-300">TypeScript</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">Tailwind CSS</span>
+                      <div className="w-2 h-2 rounded-full bg-blue-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">Full-stack Prototyping</span>
                     </div>
                   </motion.div>
                 </div>
+
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Backend</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Backend & APIs</h3>
                   <motion.div
                     className="space-y-2"
                     initial={{ y: 20, opacity: 0 }}
@@ -143,21 +144,26 @@ export function SkillsCircle({ x, y, angle, size, color }: SkillsCircleProps) {
                     transition={{ delay: 0.55, duration: 0.5 }}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">Node.js</span>
+                      <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">Python</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">Express</span>
+                      <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">FastAPI</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">PostgreSQL</span>
+                      <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">SOAP & REST APIs</span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-green-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">System Integration</span>
                     </div>
                   </motion.div>
                 </div>
+
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Tools</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">AI & Data</h3>
                   <motion.div
                     className="space-y-2"
                     initial={{ y: 20, opacity: 0 }}
@@ -165,21 +171,22 @@ export function SkillsCircle({ x, y, angle, size, color }: SkillsCircleProps) {
                     transition={{ delay: 0.65, duration: 0.5 }}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">Git</span>
+                      <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">LLM APIs (OpenAI, Claude)</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">Docker</span>
+                      <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">Prompt Engineering</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">AWS</span>
+                      <div className="w-2 h-2 rounded-full bg-purple-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">Data Pipeline Design</span>
                     </div>
                   </motion.div>
                 </div>
+
                 <div className="bg-gray-50 dark:bg-gray-700 rounded-lg p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Soft Skills</h3>
+                  <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">Database & Infrastructure</h3>
                   <motion.div
                     className="space-y-2"
                     initial={{ y: 20, opacity: 0 }}
@@ -187,16 +194,16 @@ export function SkillsCircle({ x, y, angle, size, color }: SkillsCircleProps) {
                     transition={{ delay: 0.75, duration: 0.5 }}
                   >
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">Team Leadership</span>
+                      <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">PostgreSQL</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">Problem Solving</span>
+                      <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">Supabase</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-pink-500"></div>
-                      <span className="text-gray-700 dark:text-gray-300">Communication</span>
+                      <div className="w-2 h-2 rounded-full bg-orange-500"></div>
+                      <span className="text-gray-700 dark:text-gray-300">Workday Integration</span>
                     </div>
                   </motion.div>
                 </div>
